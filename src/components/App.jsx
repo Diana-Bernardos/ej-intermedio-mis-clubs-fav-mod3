@@ -23,28 +23,29 @@ function App() {
       [key]:value
     }
     newObjet.id= clubs.length+1
-    setNewClub({newClub,[objet.key]:objet.value})
+    setNewClub({...newClub,[objet.key]:objet.value})
   }
   //añadir nuvo club al array del allclubs( todos )
 const addNewClub =() =>{
   setClubs ([...clubs,newClub])
 }
-const filteresClubs = clubs.filter(()=>{
+const filteredClubs = clubs.filter((club)=>{
 if(filter === "weekend"){
   return clubs.openOneWeekend === true
-}else if (filter === "weeksdays"){
+}else if (filter === "weekdays"){
   return clubs.openOneWeekdays === true
 }
+return true
 
 })
 
 
   return (
     <>
-    <Filter setFilter={setFilter}/>
-      <AllClubs data ={clubs} />
+      <Filter setFilter={setFilter}/>
+      <AllClubs data ={filteredClubs} />
       <Form  changeNewClub={changeNewClub} addNewClub={addNewClub}/>
-     <Header/>
+     
 
     </>
   )

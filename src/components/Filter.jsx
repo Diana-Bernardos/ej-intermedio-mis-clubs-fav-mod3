@@ -1,15 +1,15 @@
-import React from 'react'
+
 
 function Filter({setFilter}) {
 
-  /* const handleChange =(ev)=>{
+  const handleChange =(ev)=>{
     setFilter(ev.target.value)
-  } */
+  } 
   return (
     <div>
-      <label htmlFor=""></label>
-      <select onChange={(ev)=>setFilter(ev.target.value)}>
-     <option value="all"></option>
+      <label htmlFor="">mostrar</label>
+      <select onChange={handleChange}>
+     <option value="all">todos</option>
      <option value="weekdays">os que abren entre semana</option>
      <option value="weekend">los que abren el fin de semana</option>
      </select>
